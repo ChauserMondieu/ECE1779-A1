@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Detection</title>
+</head>
+<body style="background-image: url('/static/picture/BackGround.jpg');">
+<h1>Welcome to Face Detection</h1><br>
+
+<form method='POST'>
+    {{ form.hidden_tag() }}
+    {{ form.name.label }}<br>{{ form.name() }}<br>
+    {{ form.password.label }}<br>{{ form.password() }}<br><br>
+    {{ form.submit() }}<br><br>
+</form>
+
+<a href = "{{ url_for('registration_function') }}">No account?</a><br><br>
+
+{% block content %}
+<div class="container">
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+{% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+</body>
+</html>

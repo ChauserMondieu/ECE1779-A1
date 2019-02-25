@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Upload</title>
+</head>
+<body style="background-image: url('/static/picture/BackGround.jpg');">
+
+<h1>Hello {{ name }}</h1><br>
+<form method='POST' action="" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.file.label }}<br><br>{{ form.file() }}<br><br>
+    {{ form.submit() }}<br><br><br>
+</form>
+<p>Note: only 'png', 'jpg', 'JPG', 'PNG' file are allowed!</p>
+</body>
+</html>

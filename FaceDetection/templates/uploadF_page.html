@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Upload</title>
+</head>
+<body style="background-image: url('/static/picture/BackGround.jpg');">
+
+<h1>Upload</h1><br>
+
+<form method='POST' action="" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }}<br>{{ form.name() }}<br>
+    {{ form.password.label }}<br>{{ form.password() }}<br><br>
+    {{ form.file.label }}<br><br>{{ form.file() }}<br><br>
+    {{ form.submit() }}<br><br><br>
+</form>
+{% block content %}
+<div class="container">
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+{% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+<br><p>Note: only 'png', 'jpg', 'JPG', 'PNG' file are allowed!</p>
+</body>
+</html>
